@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Medicil - Medical Clinic & Hospital Bootstrap Template</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="img/icon.png" />
+  <!-- Bootstrap icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styles.css') }}">
+</head>
+
+<body class="d-flex flex-column h-100 bg-light">
+  <main class="flex-shrink-0">
+    <div class="bg-primary">
+
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-0 osahan-nav">
+        <div class="container px-5">
+          <a class="navbar-brand" href="/index"><img class="img-fluid" src="static\logo.png" alt="..." /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="/cancer">Cancer</a></li>
+              <li class="nav-item"><a class="nav-link" href="/diabetes">Diabetes</a></li>
+              <li class="nav-item"><a class="nav-link" href="/heart">Heart</a></li>
+              <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
+              <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+            </ul>
+            <div class="d-flex gap-4 align-items-center">
+              <a href="/login" class="text-decoration-none text-white text-uppercase fw-bold">Log In</a>
+              <a href="/signup" class="btn btn-warning text-uppercase fw-bold">Sign up</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      </header>
+
+      <header class="bg-primary py-5 inner-header">
+        <div class="container py-4 px-5">
+          <div class="row gx-5 align-items-center justify-content-center">
+            <div class="col-lg-12">
+              <div class="text-center">
+                <h1 class="fw-bold text-white">Breast Cancer</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Let us know if you are suffering or not...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!--Main content-->
+      <section class="pyt-5">
+        <div class="containerbox mb-5">
+          <h2>Details from report: </h2>
+          <h3>Enter the Following parameters :</h3>
+          <form action="/result" method="POST">
+            <table class="table table-striped  table-hover table-bordered">
+              <thead>
+                <tr>
+                  <th>Parameters</th>
+                  <th>Values</th>
+                  <th>Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td for="Radius_mean">Radius mean </td>
+                  <td><input class="form-control" type="text" placeholder="Radius mean value" id="Radius_mean"
+                      name="Radius_mean" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 13,17.99 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="Texture_mean">Texture mean </td>
+                  <td><input class="form-control" type="text" placeholder="Texture mean value" id="Texture_mean"
+                      name="Texture_mean" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 24.8,12.38 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="BloodPressure">Perimeter mean </td>
+                  <td><input class="form-control" type="text" placeholder="Perimeter mean value" id="Perimeter_mean"
+                      name="Perimeter_mean" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 131,135.3 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="Area_mean">Area mean </td>
+                  <td><input class="form-control" type="text" placeholder="Area mean value" id="Area_mean"
+                      name="Area_mean" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 1001,435.3 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="Smoothness_mean">Smoothness mean </td>
+                  <td><input class="form-control" type="text" placeholder="Smoothness mean value" id="Smoothness_mean"
+                      name="Smoothness_mean" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.1184,0.08033 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="Compactness_mean">Compactness mean </td>
+                  <td><input class="form-control" type="text" placeholder="Compactness mean value" id="Compactness_mean"
+                      name="Compactness_mean" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.2231,0.07735 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="Concavity_mean">Concavity mean </td>
+                  <td><input class="form-control" placeholder="Concavity mean value" type="text" id="Concavity_mean"
+                      name="Concavity_mean" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.3001,0.0803 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="concave points_mean">Concave points mean </td>
+                  <td><input class="form-control" type="text" placeholder="Concavity points value"
+                      id="concave points_mean" name="concave points_mean" pattern="[+-]?([0-9]*[.])?[0-9]+" required>
+                  </td>
+                  <td>Should be a rational number,e.g., 0.1471,0.07013 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="symmetry_mean">Symmetry mean </td>
+                  <td><input class="form-control" type="text" placeholder="Symmetry mean value" id="symmetry_mean"
+                      name="symmetry_mean" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.2419, 0.304 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="Compactness_mean">Fractal dimension mean </td>
+                  <td><input class="form-control" type="text" placeholder="FDM value" id="fractal_dimension_mean"
+                      name="fractal_dimension_mean" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.07871, 0.09744 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="radius_se">Radius se </td>
+                  <td><input class="form-control" type="text" placeholder="Standard error value" id="radius_se"
+                      name="radius_se" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 1.095,0.5435 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="texture_se">Texture se </td>
+                  <td><input class="form-control" type="text" placeholder="Standard error value" id="texture_se"
+                      name="texture_se" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.9053, 1.154 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="perimeter_se">Perimeter se </td>
+                  <td><input class="form-control" type="text" id="perimeter_se" placeholder="Standard error value"
+                      name="perimeter_se" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 8.589, 2.217 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="area_se">Area se </td>
+                  <td><input class="form-control" type="text" id="area_se" placeholder="Standard error value"
+                      name="area_se" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 153.4, 50.91 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="smoothness_se">Smoothness se </td>
+                  <td><input class="form-control" type="text" id="smoothness_se" placeholder="Standard error value"
+                      name="smoothness_se" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.003419, 0.006399 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="compactness_se">Compactness se </td>
+                  <td><input class="form-control" type="text" id="compactness_se" placeholder="Standard error value"
+                      name="compactness_se" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.04904, 0.01308 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="concavity_se">Concavity se </td>
+                  <td><input class="form-control" type="text" id="concavity_se" placeholder="Standard error value"
+                      name="concavity_se" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.05373, 0.0186 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="concave points_se">Concave points se </td>
+                  <td><input class="form-control" type="text" id="concave points_se" placeholder="Standard error value"
+                      name="concave points_se" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.0134, 0.02058 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="symmetry_se">Symmetry se </td>
+                  <td><input class="form-control" type="text" id="symmetry_se" name="symmetry_se"
+                      placeholder="Standard error value" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.0225, 0.05963 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="fractal_dimension_se">Fractal dimension se </td>
+                  <td><input class="form-control" type="text" placeholder="Standard error value"
+                      id="fractal_dimension_se" name="fractal_dimension_se" pattern="[+-]?([0-9]*[.])?[0-9]+" required>
+                  </td>
+                  <td>Should be a rational number,e.g., 0.006193, 0.003042 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="radius_worst">Radius worst </td>
+                  <td><input class="form-control" type="text" id="radius_worst" placeholder="Worst Radius value"
+                      name="radius_worst" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 25.38, 24.99 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="texture_worst">Texture worst </td>
+                  <td><input class="form-control" type="text" id="texture_worst" placeholder="Worst Texture value"
+                      name="texture_worst" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 16.67, 25.53 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="perimeter_worst">Perimeter worst </td>
+                  <td><input class="form-control" type="text" id="perimeter_worst" placeholder="Worst Perimeter value"
+                      name="perimeter_worst" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 184.6, 98.7 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="area_worst">Area worst </td>
+                  <td><input class="form-control" type="text" id="area_worst" placeholder="Worst Area value"
+                      name="area_worst" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 2019, 567.7 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="smoothness_worst">Smoothness worst </td>
+                  <td><input class="form-control" type="text" placeholder="Worst smoothness value" id="smoothness_worst"
+                      name="smoothness_worst" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.1622, 0.139 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="compactness_worst">Compactness_worst </td>
+                  <td><input class="form-control" type="text" placeholder="Worst compactness value"
+                      id="compactness_worst" name="compactness_worst" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.6656, 0.1866 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="concavity_worst">Concavity worst </td>
+                  <td><input class="form-control" type="text" placeholder="Worst Concavity value" id="concavity_worst"
+                      name="concavity_worst" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.7119, 0.2416 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="concave points_worst">Concave points worst </td>
+                  <td><input class="form-control" type="text" placeholder="Worst CP value" id="concave points_worst"
+                      name="concave points_worst" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.2514, 0.189 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="symmetry_worst">Symmetry worst </td>
+                  <td><input class="form-control" type="text" placeholder="Worst Symmetry value" id="symmetry_worst"
+                      name="symmetry_worst" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.4601, 0.275 etc.</td>
+                </tr>
+                <tr>
+
+                  <td for="fractal_dimension_worst">Fractal dimension worst </td>
+                  <td><input class="form-control" type="text" placeholder="Worst FD value" id="fractal_dimension_worst"
+                      name="fractal_dimension_worst" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+                  <td>Should be a rational number,e.g., 0.1189, 0.08139 etc.</td>
+                </tr>
+
+              </tbody>
+            </table>
+            <button class="btn btn-success" type="submit">Submit</button>
+          </form>
+
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <div class="py-5 footer bg-black d-none d-xl-block">
+        <div>
+          <div class="container px-5 py-5">
+            <div class="row">
+              <div class="col-6 col-lg-4 col-md-3">
+                <a href="index.html" class="brand img">
+                  <img src="static\logo.png" class="img-fluid" alt="ADS WORKS">
+                </a>
+                <h6 class="mb-2 text-white mt-5 fw-bold text-uppercase">Let's check ourselves.</h6>
+              </div>
+              <div class="col-6 col-lg-2 col-md-3">
+                <h6 class="mb-3 text-white fw-bold">COMPANY</h6>
+                <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/about">About</a>
+                <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/cancer">Breast Cancer</a>
+                <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/diabetes">Diabetes</a>
+                <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/heart">Heart</a>
+              </div>
+              <div class="col-6 col-lg-2 col-md-3">
+                <h6 class="mb-3 text-white fw-bold">QUICK LINKS</h6>
+                <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/login">Login</a>
+                <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/signup">Signup</a>
+                <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/faq">FAQ</a>
+                <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/contact">Contact </a>
+              </div>
+              <div class="col-6 col-lg-4 col-md-3">
+                <h6 class="mb-3 text-white fw-bold">HELP</h6>
+                <div class="d-flex gap-3 mb-3 py-1">
+                  <i class="bi bi-chat-dots text-white h5 m-0"></i>
+                  <div>
+                    <p class="mb-1 fw-bold text-white">Contact us</p>
+                    <small class="text-muted">Share your thoughts about the platform.</small>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="bg-dark py-4 mt-auto copyright-footer">
+        <div class="container px-5">
+          <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto">
+              <div class="small m-0 text-white">Copyright &copy; A.D.S Works</div>
+            </div>
+            <div class="col-auto">
+              <a class="link-light small" href="/contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Bootstrap core JS-->
+      <script type="text/javascript" src="{{ url_for('static',filename='script/bootstrap.bundle.min.js') }}"></script>
+      <!-- Core theme JS-->
+      <script type="text/javascript" src="{{ url_for('static',filename='script/scripts.js') }}"></script>
+</body>
+
+</html>

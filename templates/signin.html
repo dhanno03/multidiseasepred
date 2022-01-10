@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <title>Medicil - Medical Clinic & Hospital Bootstrap Template</title>
+      <!-- Favicon-->
+      <link rel="icon" type="image/x-icon" href="img/icon.png" />
+      <!-- Bootstrap icons-->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+      <!-- Core theme CSS (includes Bootstrap)-->
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
+   </head>
+   <body class="d-flex flex-column h-100 bg-light">
+      <main class="flex-shrink-0">
+         <div class="bg-primary">
+
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-0 osahan-nav">
+               <div class="container px-5">
+                  <a class="navbar-brand" href="/index"><img class="img-fluid" src="static\logo.png" alt="..." /></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/cancer">Cancer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/diabetes">Diabetes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/heart">Heart</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                     </ul>
+                     <div class="d-flex gap-4 align-items-center">
+                        <a href="/login" class="text-decoration-none text-white text-uppercase fw-bold">Log In</a>
+                        <a href="/signup" class="btn btn-warning text-uppercase fw-bold">Sign up</a>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </div>
+         <!-- Page Content-->
+         <div class="bg-primary">
+            <!-- Login -->
+            <div class="container px-5 py-5 login">
+               <!-- Login -->
+               <div>
+                  <div class="m-auto bg-white shadow-sm p-5 rounded-3 text-center col-lg-5 mx-auto">
+                     <h3 class="fw-bold text-black mb-2">Log in to <span class="text-primary">Medicil</span></h3>
+                     <p class="text-muted fw-light">Connect with the best professionals</p>
+                     <form action="index.html" class="text-start pt-4">
+                        <div class="mb-3">
+                           <label class="form-label small text-muted">E-Mail Address <small class="text-danger">*</small></label>
+                           <input type="email" class="form-control" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                           <label class="form-label small text-muted">Password <small class="text-danger">*</small></label>
+                           <input type="password" class="form-control" placeholder="Enter Password">
+                        </div>
+                        <div class="d-flex justify-content-between">
+                           <div class="mb-3 form-check">
+                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              <label class="form-check-label small text-muted" for="exampleCheck1">Remember me</label>
+                           </div>
+                           <div>
+                              <a href="forgot.html" class="text-mdinfo small">Forgot password?</a>
+                           </div>
+                        </div>
+                        <button type="button" class="btn btn-warning fw-bold fs-7 rounded-3 w-100 border-0 px-4 py-3 text-uppercase">Sign In</button>
+                     </form>
+                     <div class="d-flex align-items-center justify-content-between divide my-3">
+                        <hr class="w-100">
+                        <span class="text-muted small px-2">OR</span>
+                        <hr class="w-100">
+                     </div>
+                     <div class="social-btn">
+                        <a href="#" class="text-dark fw-bold">
+                           <div class="d-flex align-items-center py-3 px-3 border rounded-3 mb-3">
+                              <i class="bi bi-google"></i>
+                              <p class="mb-0 mx-auto">Continue with Google</p>
+                           </div>
+                        </a>
+                        <a href="#" class="text-dark fw-bold">
+                           <div class="d-flex align-items-center py-3 px-3 border rounded-3 mb-3">
+                              <i class="bi bi-facebook"></i>
+                              <p class="mb-0 mx-auto">Continue with Facebook</p>
+                           </div>
+                        </a>
+                     </div>
+                     <p class="text-muted mb-0">Don’t have an account? <a href="signup.html" class="text-mdinfo">Sign Up</a></p>
+                  </div>
+                  <p class="mb-0 text-center small text-white my-5">Having trouble loginng in? <a href="/contact" class="text-decoration-underline text-white">Learn from our Knowledge Base</a></p>
+               </div>
+            </div>
+         </div>
+      </main>
+       <!-- Footer -->
+       <div class="py-5 footer bg-black d-none d-xl-block">
+         <div>
+            <div class="container px-5 py-5">
+               <div class="row">
+                  <div class="col-6 col-lg-4 col-md-3">
+                     <a href="index.html" class="brand img">
+                     <img src="static\logo.png" class="img-fluid" alt="ADS WORKS">
+                     </a>
+                     <h6 class="mb-2 text-white mt-5 fw-bold text-uppercase">Let's check ourselves.</h6>
+                  </div>
+                  <div class="col-6 col-lg-2 col-md-3">
+                     <h6 class="mb-3 text-white fw-bold">COMPANY</h6>
+                     <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/about">About</a>
+                     <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/cancer">Breast Cancer</a>
+                     <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/diabetes">Diabetes</a>
+                     <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/heart">Heart</a>
+                  </div>
+                  <div class="col-6 col-lg-2 col-md-3">
+                     <h6 class="mb-3 text-white fw-bold">QUICK LINKS</h6>
+                     <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/login">Login</a>
+                     <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/signup">Signup</a>
+                     <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/faq">FAQ</a>
+                     <a class="py-1 text-decoration-none d-block w-100 text-muted" href="/contact">Contact </a>
+                  </div>
+                  <div class="col-6 col-lg-4 col-md-3">
+                     <h6 class="mb-3 text-white fw-bold">HELP</h6>
+                     <div class="d-flex gap-3 mb-3 py-1">
+                        <i class="bi bi-chat-dots text-white h5 m-0"></i>
+                        <div>
+                           <p class="mb-1 fw-bold text-white">Contact us</p>
+                           <small class="text-muted">Share your thoughts about the platform.</small>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer class="bg-dark py-4 mt-auto copyright-footer">
+         <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+               <div class="col-auto">
+                  <div class="small m-0 text-white">Copyright &copy; A.D.S Works</div>
+               </div>
+               <div class="col-auto">
+                  <a class="link-light small" href="/contact">Contact</a>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- Bootstrap core JS-->
+      <script type= "text/javascript" src="{{ url_for('static',filename='script/bootstrap.bundle.min.js') }}"></script>
+      <!-- Core theme JS-->
+      <script type= "text/javascript" src="{{ url_for('static',filename='script/scripts.js') }}"></script>
+   </body>
+</html>
