@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import SGDClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import make_pipeline
+
+from xgboost import XGBClassifier
 import joblib
 
 data=pd.read_csv("cancer.csv")
@@ -18,8 +22,7 @@ X=cancer.drop(["Malignant/Benign"],axis="columns")
 X=np.array(X)
 y=np.array(y)
 
-model1=SGDClassifier(loss="hinge", penalty="l2", max_iter=3)
-
+model1=make_pipeline(StandardScaler(), XGBClassifier(random_state = 18))
 model1.fit(X,y.reshape(-1,))
 
 joblib.dump(model1,"model1")
