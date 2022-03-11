@@ -23,6 +23,7 @@
                   <a class="navbar-brand" href="/index"><img class="img-fluid" src="static\logo.png" alt="..." /></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     {% if user.is_authenticated %}
                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
@@ -33,9 +34,24 @@
                         <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                      </ul>
                      <div class="d-flex gap-4 align-items-center">
-                        <a href="/login" class="text-decoration-none text-white text-uppercase fw-bold">Log In</a>
+                        <a class="text-decoration-none text-white text-uppercase fw-bold">Hello {{ user.first_name }} !!</a>
+                        <a href="/logout" class="btn btn-warning text-uppercase fw-bold">Log Out</a>
+                     </div>
+                     {% else %}
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/cancer">Cancer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/diabetes">Diabetes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/heart">Heart</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                     </ul>
+                     <div class="d-flex gap-4 align-items-center">
+                        <a href="/login" class="text-decoration-none text-white text-uppercase fw-bold">Login </a>
                         <a href="/signup" class="btn btn-warning text-uppercase fw-bold">Sign up</a>
                      </div>
+                     {% endif %}
                   </div>
                </div>
             </nav>

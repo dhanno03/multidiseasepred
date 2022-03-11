@@ -7,7 +7,7 @@ from sklearn.pipeline import make_pipeline
 from xgboost import XGBClassifier
 import joblib
 
-data=pd.read_csv("cancer.csv")
+data=pd.read_csv("website/cancer.csv")
 data.drop(["Unnamed: 32"],axis="columns",inplace=True)
 
 data.drop(["id"],axis="columns",inplace=True)

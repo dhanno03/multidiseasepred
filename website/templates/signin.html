@@ -23,6 +23,7 @@
                   <a class="navbar-brand" href="/index"><img class="img-fluid" src="static\logo.png" alt="..." /></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     {% if user.is_authenticated %}
                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
@@ -33,9 +34,24 @@
                         <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                      </ul>
                      <div class="d-flex gap-4 align-items-center">
-                        <a href="/login" class="text-decoration-none text-white text-uppercase fw-bold">Log In</a>
+                        <a class="text-decoration-none text-white text-uppercase fw-bold">Hello {{ user.first_name }} !!</a>
+                        <a href="/logout" class="btn btn-warning text-uppercase fw-bold">Log Out</a>
+                     </div>
+                     {% else %}
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/cancer">Cancer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/diabetes">Diabetes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/heart">Heart</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                     </ul>
+                     <div class="d-flex gap-4 align-items-center">
+                        <a href="/login" class="text-decoration-none text-white text-uppercase fw-bold">Login</a>
                         <a href="/signup" class="btn btn-warning text-uppercase fw-bold">Sign up</a>
                      </div>
+                     {% endif %}
                   </div>
                </div>
             </nav>
@@ -47,32 +63,27 @@
                <!-- Login -->
                <div>
                   <div class="m-auto bg-white shadow-sm p-5 rounded-3 text-center col-lg-5 mx-auto">
-                     <h3 class="fw-bold text-black mb-2">Sign up for <span class="text-primary">MulDiPred</span></h3>
-                     <p class="text-muted fw-light">Connect with the best local pros</p>
-                     <form action="index.html" class="text-start pt-4">
-                        <div class="row">
-                           <div class="mb-3 col-6 pe-1">
-                              <label for="exampleInputFirst" class="form-label small text-muted">First Name <small class="text-danger">*</small></label>
-                              <input type="text" class="form-control" id="exampleInputFirst" placeholder="Enter First Name">
-                           </div>
-                           <div class="mb-3 col-6 ps-1">
-                              <label for="exampleInputLast" class="form-label small text-muted">Last Name</label>
-                              <input type="text" class="form-control" id="exampleInputLast" placeholder="Enter Last Name">
-                           </div>
-                        </div>
+                     <h3 class="fw-bold text-black mb-2">Log in to <span class="text-primary">MulDiPred</span></h3>
+                     <p class="text-muted fw-light">Connect with the best professionals</p>
+                     <form class="text-start pt-4" method="POST">
                         <div class="mb-3">
                            <label class="form-label small text-muted">E-Mail Address <small class="text-danger">*</small></label>
-                           <input type="email" class="form-control" placeholder="Enter E-Mail">
+                           <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
                         </div>
                         <div class="mb-3">
-                           <label class="form-label small text-muted">Mobile Number <small class="text-danger">*</small></label>
-                           <input type="number" class="form-control" placeholder="Enter Mobile Number">
+                           <label class="form-label small text-muted">Password <small class="text-danger">*</small></label>
+                           <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
                         </div>
-                        <div class="mb-3 form-check">
-                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                           <label class="form-check-label small text-muted" for="exampleCheck1">I agree to the <a href="terms-and-conditions.html" class="text-mdinfo">Terms &amp; Conditions</a></label>
+                        <div class="d-flex justify-content-between">
+                           <div class="mb-3 form-check">
+                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              <label class="form-check-label small text-muted" for="exampleCheck1">Remember me</label>
+                           </div>
+                           <div>
+                              <a href="forgot.html" class="text-mdinfo small">Forgot password?</a>
+                           </div>
                         </div>
-                        <button type="button" class="btn btn-warning fw-bold fs-7 rounded-3 w-100 border-0 px-4 py-3 text-uppercase">Sign Up</button>
+                        <button type="submit" class="btn btn-warning fw-bold fs-7 rounded-3 w-100 border-0 px-4 py-3 text-uppercase">Sign In</button>
                      </form>
                      <div class="d-flex align-items-center justify-content-between divide my-3">
                         <hr class="w-100">
@@ -93,7 +104,7 @@
                            </div>
                         </a>
                      </div>
-                     <p class="text-muted mb-0">Already have an account? <a href="/login" class="text-mdinfo">Sign In</a></p>
+                     <p class="text-muted mb-0">Don’t have an account? <a href="signup.html" class="text-mdinfo">Sign Up</a></p>
                   </div>
                   <p class="mb-0 text-center small text-white my-5">Having trouble loginng in? <a href="/contact" class="text-decoration-underline text-white">Learn from our Knowledge Base</a></p>
                </div>

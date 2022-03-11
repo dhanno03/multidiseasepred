@@ -8,7 +8,7 @@ import joblib
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-data = pd.read_csv("heart.csv")
+data = pd.read_csv("website/heart.csv")
 data["trestbps"]=np.log(data["trestbps"])
 
 data=data.drop(["fbs"],axis=1)

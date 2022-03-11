@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 import joblib
-data=pd.read_csv("diabetes.csv")
+data=pd.read_csv("website/diabetes.csv")
 model=SGDClassifier(loss="hinge", penalty="l2", max_iter=5)
 X=data.iloc[:,:8]
 y=data[["Outcome"]]
